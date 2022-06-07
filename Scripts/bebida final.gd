@@ -1,8 +1,23 @@
 extends StaticBody
 
-func _ready():
-	var material = $MeshInstance.get_surface_material(0)
-	material.albedo_color = get_parent().get_node("bebida 1/MeshInstance").get_surface_material(0).albedo_color
-	$MeshInstance.set_surface_material(0,material)
+var bebida = {}
+var bebidas = {(1):Color.red}
 
-	#get_node("MeshInstance").material_override.albedo_color = Color(0,0,0,1)
+func update_bebida():
+	var material = $MeshInstance.get_surface_material(0)
+	material.albedo_color = bebidas[tuple(bebida)]
+	$MeshInstance.set_surface_material(0, material)
+
+func _on_bebida_1_input_event(camera, event, position, normal, shape_idx, index):
+	if (event is InputEventMouseButton and event.pressed):
+		bebida.add(index)
+
+
+func _on_bebida_2_input_event(camera, event, position, normal, shape_idx, index):
+	if (event is InputEventMouseButton and event.pressed):
+		bebida.add(index)
+
+
+func _on_bebida_3_input_event(camera, event, position, normal, shape_idx, index):
+	if (event is InputEventMouseButton and event.pressed):
+		bebida.add(index)
