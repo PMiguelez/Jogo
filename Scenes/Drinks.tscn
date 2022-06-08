@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/Drink.gd" type="Script" id=1]
-[ext_resource path="res://MeshInstance.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Drinks.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Ingredients.gd" type="Script" id=3]
 
 [sub_resource type="PlaneMesh" id=23]
@@ -61,6 +61,7 @@ albedo_color = Color( 0.356863, 0.639216, 0.305882, 1 )
 [sub_resource type="PlaneMesh" id=22]
 
 [node name="Drinks" type="Spatial"]
+script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -3 )
@@ -91,14 +92,12 @@ transform = Transform( 0.640363, 0, 0, 0, 0.618209, 0, 0, 0, 0.593385, -1.1934, 
 mesh = SubResource( 11 )
 skeleton = NodePath("")
 material/0 = SubResource( 13 )
-script = ExtResource( 2 )
 
 [node name="Cup" type="MeshInstance" parent="Drink"]
 transform = Transform( 0.669624, 0, 0, 0, 0.617153, 0, 0, 0, 0.617808, -1.21835, -1.0711, 0.343203 )
 mesh = SubResource( 12 )
 skeleton = NodePath("")
 material/0 = SubResource( 6 )
-script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Drink"]
 shape = SubResource( 5 )

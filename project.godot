@@ -11,18 +11,28 @@ config_version=4
 [application]
 
 config/name="SpacialBarman"
-run/main_scene="res://Cenas/Drinks.tscn"
+run/main_scene="res://Scenes/Drinks.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Hud="*res://Cenas/HUD.tscn"
+Hud="*res://Scenes/HUD.tscn"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
 
 [input]
 
-open_gd={
+open_dg={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777218,"unicode":0,"echo":false,"script":null)
+ ]
+}
+open_drinks={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":66,"unicode":0,"echo":false,"script":null)
  ]
 }
 
