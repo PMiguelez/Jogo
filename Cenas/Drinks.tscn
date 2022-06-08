@@ -1,0 +1,267 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Scripts/Drink.gd" type="Script" id=1]
+[ext_resource path="res://MeshInstance.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Ingredients.gd" type="Script" id=3]
+
+[sub_resource type="PlaneMesh" id=23]
+size = Vector2( 6, 2 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0.678431, 0.780392, 0.529412, 1 )
+
+[sub_resource type="BoxShape" id=2]
+
+[sub_resource type="CylinderMesh" id=11]
+top_radius = 2.731
+bottom_radius = 2.0
+height = 6.0
+
+[sub_resource type="SpatialMaterial" id=13]
+
+[sub_resource type="CylinderMesh" id=12]
+top_radius = 3.0
+bottom_radius = 2.0
+height = 8.0
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+albedo_color = Color( 0.780392, 1, 1, 0.25098 )
+
+[sub_resource type="BoxShape" id=5]
+
+[sub_resource type="CubeMesh" id=7]
+size = Vector3( 4.4, 2, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 1, 0.156863, 0.156863, 1 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 2.2, 1, 1 )
+
+[sub_resource type="PlaneMesh" id=14]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.356863, 0.639216, 0.305882, 1 )
+
+[sub_resource type="PlaneMesh" id=15]
+
+[sub_resource type="PlaneMesh" id=16]
+
+[sub_resource type="PlaneMesh" id=17]
+
+[sub_resource type="PlaneMesh" id=18]
+
+[sub_resource type="PlaneMesh" id=19]
+
+[sub_resource type="PlaneMesh" id=20]
+
+[sub_resource type="PlaneMesh" id=21]
+
+[sub_resource type="PlaneMesh" id=22]
+
+[node name="Drinks" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -3 )
+
+[node name="Background" type="StaticBody" parent="."]
+transform = Transform( 3, 0, 0, 0, 4, 0, 0, 0, 1, 0, 3, -10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Background"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00217183, 0.00844306, -0.0102959 )
+mesh = SubResource( 23 )
+material/0 = SubResource( 10 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Background"]
+shape = SubResource( 2 )
+
+[node name="Drink" type="StaticBody" parent="."]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.319394, 5.29809, -8.00082 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Liquid" type="MeshInstance" parent="Drink"]
+transform = Transform( 0.640363, 0, 0, 0, 0.618209, 0, 0, 0, 0.593385, -1.1934, -1.54077, 0.308834 )
+mesh = SubResource( 11 )
+skeleton = NodePath("")
+material/0 = SubResource( 13 )
+script = ExtResource( 2 )
+
+[node name="Cup" type="MeshInstance" parent="Drink"]
+transform = Transform( 0.669624, 0, 0, 0, 0.617153, 0, 0, 0, 0.617808, -1.21835, -1.0711, 0.343203 )
+mesh = SubResource( 12 )
+skeleton = NodePath("")
+material/0 = SubResource( 6 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Drink"]
+shape = SubResource( 5 )
+
+[node name="ResetButton" type="StaticBody" parent="."]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.77748, 5.77926, -8.52242 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="ResetButton"]
+mesh = SubResource( 7 )
+skeleton = NodePath("")
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="ResetButton"]
+shape = SubResource( 9 )
+
+[node name="Ingredients" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Ingredient1" type="StaticBody" parent="Ingredients"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.02578, 3.30475, -8.61016 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Ingredients/Ingredient1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 14 )
+skeleton = NodePath("")
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ingredients/Ingredient1"]
+shape = SubResource( 5 )
+
+[node name="Ingredient2" type="StaticBody" parent="Ingredients"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0627634, 3.29866, -8.60182 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Ingredients/Ingredient2"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 15 )
+skeleton = NodePath("")
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ingredients/Ingredient2"]
+shape = SubResource( 5 )
+
+[node name="Ingredient3" type="StaticBody" parent="Ingredients"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.82119, 3.29866, -8.60182 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Ingredients/Ingredient3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 16 )
+skeleton = NodePath("")
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ingredients/Ingredient3"]
+shape = SubResource( 5 )
+
+[node name="Ingredient4" type="StaticBody" parent="Ingredients"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.02616, 2.06386, -8.60182 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Ingredients/Ingredient4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 17 )
+skeleton = NodePath("")
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ingredients/Ingredient4"]
+shape = SubResource( 5 )
+
+[node name="Ingredient5" type="StaticBody" parent="Ingredients"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0627634, 2.06386, -8.60182 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Ingredients/Ingredient5"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 18 )
+skeleton = NodePath("")
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ingredients/Ingredient5"]
+shape = SubResource( 5 )
+
+[node name="Ingredient6" type="StaticBody" parent="Ingredients"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.82119, 2.06386, -8.60182 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Ingredients/Ingredient6"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 19 )
+skeleton = NodePath("")
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ingredients/Ingredient6"]
+shape = SubResource( 5 )
+
+[node name="Ingredient7" type="StaticBody" parent="Ingredients"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.02616, 0.671359, -8.60182 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Ingredients/Ingredient7"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 20 )
+skeleton = NodePath("")
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ingredients/Ingredient7"]
+shape = SubResource( 5 )
+
+[node name="Ingredient8" type="StaticBody" parent="Ingredients"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0627634, 0.671359, -8.60182 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Ingredients/Ingredient8"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 21 )
+skeleton = NodePath("")
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ingredients/Ingredient8"]
+shape = SubResource( 5 )
+
+[node name="Ingredient9" type="StaticBody" parent="Ingredients"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.82119, 0.671359, -8.60182 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Ingredients/Ingredient9"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.036696, -0.0315142, 0.0566387 )
+mesh = SubResource( 22 )
+skeleton = NodePath("")
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ingredients/Ingredient9"]
+shape = SubResource( 5 )
+
+[connection signal="input_event" from="ResetButton" to="Drink" method="_on_ResetButton_input_event"]
+[connection signal="input_event" from="Ingredients/Ingredient1" to="Drink" method="_on_Ingredient1_input_event" binds= [ 1 ]]
+[connection signal="input_event" from="Ingredients/Ingredient2" to="Drink" method="_on_Ingredient2_input_event" binds= [ 2 ]]
+[connection signal="input_event" from="Ingredients/Ingredient3" to="Drink" method="_on_Ingredient3_input_event" binds= [ 3 ]]
+[connection signal="input_event" from="Ingredients/Ingredient4" to="Drink" method="_on_Ingredient4_input_event" binds= [ 4 ]]
+[connection signal="input_event" from="Ingredients/Ingredient5" to="Drink" method="_on_Ingredient5_input_event" binds= [ 5 ]]
+[connection signal="input_event" from="Ingredients/Ingredient6" to="Drink" method="_on_Ingredient6_input_event" binds= [ 6 ]]
+[connection signal="input_event" from="Ingredients/Ingredient7" to="Drink" method="_on_Ingredient7_input_event" binds= [ 7 ]]
+[connection signal="input_event" from="Ingredients/Ingredient8" to="Drink" method="_on_Ingredient8_input_event" binds= [ 8 ]]
+[connection signal="input_event" from="Ingredients/Ingredient9" to="Drink" method="_on_Ingredient9_input_event" binds= [ 9 ]]
