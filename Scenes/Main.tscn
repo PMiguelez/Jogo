@@ -1,8 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Scenes/DrinksGuide.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/camera_control.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=3]
+[ext_resource path="res://Models/Bar.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Models/Tables.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://Models/Tables2.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://Models/Arcades.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://Models/Soda_can.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://Models/banco_bar.obj" type="ArrayMesh" id=9]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -16,13 +22,114 @@ material = SubResource( 6 )
 
 [sub_resource type="BoxShape" id=5]
 
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.0705882, 0.254902, 0.113725, 1 )
+
+[sub_resource type="SpatialMaterial" id=17]
+albedo_color = Color( 0.647059, 0.627451, 0.627451, 1 )
+
+[sub_resource type="SpatialMaterial" id=18]
+albedo_color = Color( 0.470588, 0.203922, 0.203922, 1 )
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_color = Color( 0.317647, 0.235294, 0.145098, 1 )
+
+[sub_resource type="SpatialMaterial" id=20]
+albedo_color = Color( 0.427451, 0.239216, 0.129412, 1 )
+
+[sub_resource type="SpatialMaterial" id=21]
+albedo_color = Color( 0.807843, 0.756863, 0.756863, 1 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_color = Color( 0.752941, 0.745098, 0.745098, 1 )
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_color = Color( 0.752941, 0.745098, 0.745098, 1 )
+
+[sub_resource type="SpatialMaterial" id=15]
+albedo_color = Color( 0.305882, 0.278431, 0.278431, 1 )
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_color = Color( 0.305882, 0.278431, 0.278431, 1 )
+
+[sub_resource type="SpatialMaterial" id=22]
+albedo_color = Color( 0.141176, 0.552941, 0.109804, 1 )
+
+[sub_resource type="SpatialMaterial" id=23]
+albedo_color = Color( 0.231373, 0.231373, 0.231373, 1 )
+
+[sub_resource type="SpatialMaterial" id=24]
+albedo_color = Color( 0.713726, 0.0666667, 0.0666667, 1 )
+
+[sub_resource type="SpatialMaterial" id=25]
+albedo_color = Color( 0.0666667, 0.231373, 0.0431373, 1 )
+
+[sub_resource type="SpatialMaterial" id=26]
+albedo_color = Color( 0.603922, 0.482353, 0.027451, 1 )
+
+[sub_resource type="SpatialMaterial" id=27]
+albedo_color = Color( 0.196078, 0.141176, 0.427451, 1 )
+
+[sub_resource type="SpatialMaterial" id=28]
+albedo_color = Color( 0.403922, 0.376471, 0.376471, 1 )
+
+[sub_resource type="SpatialMaterial" id=29]
+albedo_color = Color( 0.776471, 0.690196, 0.690196, 1 )
+
+[sub_resource type="SpatialMaterial" id=30]
+albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="SpatialMaterial" id=31]
+albedo_color = Color( 0.0668945, 0.0611458, 0.0611458, 1 )
+
+[sub_resource type="SpatialMaterial" id=32]
+albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="SpatialMaterial" id=33]
+albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="SpatialMaterial" id=34]
+
+[sub_resource type="SpatialMaterial" id=35]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=36]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=37]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=38]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=39]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=40]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=41]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=42]
+
+[sub_resource type="SpatialMaterial" id=43]
+albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="SpatialMaterial" id=44]
+albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="SpatialMaterial" id=45]
+albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
+
 [node name="Main" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.3649, 12.2011, -54.3815 )
 
 [node name="DrinksGuide" parent="." instance=ExtResource( 1 )]
 visible = false
 
 [node name="Floor" type="StaticBody" parent="."]
-transform = Transform( 30, 0, 0, 0, 2, 0, 0, 0, 30, 0, 0, 0 )
+transform = Transform( 40, 0, 0, 0, 2, 0, 0, 0, 40, 0, 0, -10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -35,11 +142,8 @@ material/0 = null
 shape = SubResource( 2 )
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 2.5, 0, 0, 0, 1, 0, 4.6, 24 )
+transform = Transform( 1, 0, 0, 0, 6, 0, 0, 0, 1, 0, 8, 24 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="MeshInstance" type="MeshInstance" parent="Player"]
 mesh = SubResource( 4 )
@@ -51,6 +155,95 @@ shape = SubResource( 5 )
 [node name="Camera" type="Camera" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 0.333333, 0, 0, 0, 1, 0, 0.7, -1.1 )
 script = ExtResource( 2 )
-sensitivity = 0.15
+sensitivity = 0.25
 yaw_limit = 90
-pitch_limit = 40
+pitch_limit = 60
+
+[node name="Bar" type="MeshInstance" parent="."]
+transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 0.628, 1.9, 21.301 )
+mesh = ExtResource( 4 )
+material/0 = SubResource( 7 )
+material/1 = SubResource( 17 )
+material/2 = SubResource( 18 )
+material/3 = SubResource( 19 )
+material/4 = SubResource( 20 )
+material/5 = SubResource( 21 )
+
+[node name="Tables" type="MeshInstance" parent="."]
+transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 22.9483, 1.9, -19.501 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 13 )
+material/1 = SubResource( 14 )
+material/2 = SubResource( 15 )
+material/3 = SubResource( 16 )
+
+[node name="Tables2" type="MeshInstance" parent="."]
+transform = Transform( -1.31134e-08, -0.3, 0, -1.31134e-08, 5.73206e-16, 0.3, -0.3, 1.31134e-08, -1.31134e-08, 2.26389, 1.9, -21.7053 )
+mesh = ExtResource( 6 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+
+[node name="Arcades" type="MeshInstance" parent="."]
+transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -39.7945, 14.3787, -4.351 )
+mesh = ExtResource( 7 )
+material/0 = SubResource( 22 )
+material/1 = SubResource( 23 )
+material/2 = SubResource( 24 )
+material/3 = SubResource( 25 )
+material/4 = SubResource( 26 )
+material/5 = SubResource( 27 )
+
+[node name="Soda_can" type="MeshInstance" parent="."]
+transform = Transform( 0.012, 0, 0, 0, -5.24537e-10, 0.012, 0, -0.012, -5.24537e-10, 6.17869, 6.8722, -21.9014 )
+mesh = ExtResource( 8 )
+material/0 = SubResource( 28 )
+material/1 = SubResource( 29 )
+material/2 = SubResource( 30 )
+material/3 = SubResource( 31 )
+material/4 = SubResource( 32 )
+material/5 = SubResource( 33 )
+material/6 = SubResource( 34 )
+material/7 = SubResource( 35 )
+material/8 = SubResource( 36 )
+material/9 = SubResource( 37 )
+material/10 = SubResource( 38 )
+material/11 = SubResource( 39 )
+material/12 = SubResource( 40 )
+material/13 = SubResource( 41 )
+material/14 = SubResource( 42 )
+material/15 = SubResource( 43 )
+material/16 = SubResource( 44 )
+material/17 = SubResource( 45 )
+
+[node name="banco_bar" type="MeshInstance" parent="."]
+transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.4, 0, -0.3, -1.74846e-08, 9, 1.9, 3 )
+mesh = ExtResource( 9 )
+material/0 = null
+material/1 = null
+
+[node name="banco_bar2" type="MeshInstance" parent="."]
+transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.4, 0, -0.3, -1.74846e-08, 2, 1.9, 3 )
+mesh = ExtResource( 9 )
+material/0 = null
+material/1 = null
+
+[node name="banco_bar3" type="MeshInstance" parent="."]
+transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.4, 0, -0.3, -1.74846e-08, -5, 1.9, 3 )
+mesh = ExtResource( 9 )
+material/0 = null
+material/1 = null
+
+[node name="banco_bar4" type="MeshInstance" parent="."]
+transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.4, 0, -0.3, -1.74846e-08, -12, 1.9, 3 )
+mesh = ExtResource( 9 )
+material/0 = null
+material/1 = null
+
+[node name="banco_bar5" type="MeshInstance" parent="."]
+transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.4, 0, -0.3, -1.74846e-08, -19, 1.9, 3 )
+mesh = ExtResource( 9 )
+material/0 = null
+material/1 = null
