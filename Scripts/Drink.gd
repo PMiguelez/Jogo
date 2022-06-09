@@ -1,5 +1,6 @@
 extends StaticBody
 
+var drink = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 var ingredientCount = 0
 var drink_color = [0.0, 0.0, 0.0]
 var ingredients = {0:[0.5, 0.5, 0.5], 
@@ -22,6 +23,8 @@ func update_drink(index):
 	if index == 0:
 		ingredientCount = 0
 		drink_color = [ingredients[0][0], ingredients[0][1], ingredients[0][2]]
+	else:
+		drink[index-1]+=1
 		
 	# Updates objects color
 	var material = $Liquid.get_surface_material(0)
@@ -56,3 +59,9 @@ func _on_Ingredient8_input_event(camera, event, position, normal, shape_idx, ind
 	on_input_event(event, index)
 func _on_Ingredient9_input_event(camera, event, position, normal, shape_idx, index):
 	on_input_event(event, index)
+
+func _on_CompleteButton_input_event(camera, event, position, normal, shape_idx):
+	if (event is InputEventMouseButton and event.pressed):
+		#if get_tree().get_root().get_node("Bar/DrinksGuide").drink_ingredient == drink:
+			#print("ok")
+		get_tree().change_scene("res://Scenes/Main.tscn")

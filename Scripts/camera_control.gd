@@ -6,7 +6,7 @@ extends Camera
 # User settings:
 # General settings
 export var enabled = true setget set_enabled
-export(int, "Visible", "Hidden", "Caputered, Confined") var mouse_mode = 2
+export(int, "Visible", "Hidden", "Caputered, Confined") var mouse_mode = 3
 
 # Mouslook settings
 export var mouselook = true

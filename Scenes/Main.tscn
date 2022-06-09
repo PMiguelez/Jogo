@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Scenes/DrinksGuide.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/camera_control.gd" type="Script" id=2]
@@ -10,9 +10,30 @@
 [ext_resource path="res://Models/Soda_can.obj" type="ArrayMesh" id=8]
 [ext_resource path="res://Models/banco_bar.obj" type="ArrayMesh" id=9]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="PlaneMesh" id=47]
+
+[sub_resource type="StreamTexture" id=48]
+flags = 4
+load_path = "res://.import/floor.png-d43f03cb7a8f42941311ed90ed2021b9.stex"
+
+[sub_resource type="SpatialMaterial" id=46]
+albedo_color = Color( 0.247059, 0.180392, 0.113725, 1 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 48 )
 
 [sub_resource type="BoxShape" id=2]
+
+[sub_resource type="OpenSimplexNoise" id=73]
+octaves = 9
+period = 0.1
+persistence = 0.7
+
+[sub_resource type="NoiseTexture" id=72]
+noise = SubResource( 73 )
+
+[sub_resource type="SpatialMaterial" id=54]
+albedo_texture = SubResource( 72 )
 
 [sub_resource type="SpatialMaterial" id=6]
 albedo_color = Color( 0.117647, 0.376471, 0.721569, 1 )
@@ -29,7 +50,7 @@ albedo_color = Color( 0.0705882, 0.254902, 0.113725, 1 )
 albedo_color = Color( 0.647059, 0.627451, 0.627451, 1 )
 
 [sub_resource type="SpatialMaterial" id=18]
-albedo_color = Color( 0.470588, 0.203922, 0.203922, 1 )
+albedo_color = Color( 0.12549, 0.117647, 0.211765, 1 )
 
 [sub_resource type="SpatialMaterial" id=19]
 albedo_color = Color( 0.317647, 0.235294, 0.145098, 1 )
@@ -38,7 +59,7 @@ albedo_color = Color( 0.317647, 0.235294, 0.145098, 1 )
 albedo_color = Color( 0.427451, 0.239216, 0.129412, 1 )
 
 [sub_resource type="SpatialMaterial" id=21]
-albedo_color = Color( 0.807843, 0.756863, 0.756863, 1 )
+albedo_color = Color( 0.447059, 0.447059, 0.447059, 1 )
 
 [sub_resource type="SpatialMaterial" id=13]
 albedo_color = Color( 0.752941, 0.745098, 0.745098, 1 )
@@ -47,10 +68,25 @@ albedo_color = Color( 0.752941, 0.745098, 0.745098, 1 )
 albedo_color = Color( 0.752941, 0.745098, 0.745098, 1 )
 
 [sub_resource type="SpatialMaterial" id=15]
-albedo_color = Color( 0.305882, 0.278431, 0.278431, 1 )
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=16]
-albedo_color = Color( 0.305882, 0.278431, 0.278431, 1 )
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=59]
+albedo_color = Color( 0.752941, 0.745098, 0.745098, 1 )
+
+[sub_resource type="SpatialMaterial" id=60]
+albedo_color = Color( 0.752941, 0.745098, 0.745098, 1 )
+
+[sub_resource type="SpatialMaterial" id=61]
+albedo_color = Color( 0.447059, 0.447059, 0.447059, 1 )
+
+[sub_resource type="SpatialMaterial" id=62]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=63]
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=22]
 albedo_color = Color( 0.141176, 0.552941, 0.109804, 1 )
@@ -62,7 +98,7 @@ albedo_color = Color( 0.231373, 0.231373, 0.231373, 1 )
 albedo_color = Color( 0.713726, 0.0666667, 0.0666667, 1 )
 
 [sub_resource type="SpatialMaterial" id=25]
-albedo_color = Color( 0.0666667, 0.231373, 0.0431373, 1 )
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=26]
 albedo_color = Color( 0.603922, 0.482353, 0.027451, 1 )
@@ -122,30 +158,102 @@ albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
 [sub_resource type="SpatialMaterial" id=45]
 albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
 
-[node name="Main" type="Spatial"]
+[sub_resource type="SpatialMaterial" id=57]
+albedo_color = Color( 0.752941, 0.745098, 0.745098, 1 )
+
+[sub_resource type="SpatialMaterial" id=58]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=64]
+albedo_color = Color( 0.752941, 0.745098, 0.745098, 1 )
+
+[sub_resource type="SpatialMaterial" id=65]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=66]
+albedo_color = Color( 0.752941, 0.745098, 0.745098, 1 )
+
+[sub_resource type="SpatialMaterial" id=67]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=68]
+albedo_color = Color( 0.752941, 0.745098, 0.745098, 1 )
+
+[sub_resource type="SpatialMaterial" id=69]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=70]
+albedo_color = Color( 0.752941, 0.745098, 0.745098, 1 )
+
+[sub_resource type="SpatialMaterial" id=71]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="PlaneMesh" id=49]
+
+[sub_resource type="StreamTexture" id=50]
+flags = 4
+load_path = "res://.import/wall.png-e3261c66ad83b71f524576fb4f3c7b5b.stex"
+
+[sub_resource type="SpatialMaterial" id=51]
+albedo_color = Color( 0.235294, 0.145098, 0.145098, 1 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 50 )
+
+[sub_resource type="BoxShape" id=52]
+
+[sub_resource type="StreamTexture" id=55]
+
+[sub_resource type="SpatialMaterial" id=56]
+albedo_color = Color( 0.529412, 0.411765, 0.27451, 1 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 55 )
+
+[sub_resource type="CubeMesh" id=74]
+
+[sub_resource type="BoxShape" id=75]
+
+[node name="Bar" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.3649, 12.2011, -54.3815 )
 
 [node name="DrinksGuide" parent="." instance=ExtResource( 1 )]
 visible = false
 
 [node name="Floor" type="StaticBody" parent="."]
-transform = Transform( 40, 0, 0, 0, 2, 0, 0, 0, 40, 0, 0, -10 )
+transform = Transform( 40, 0, 0, 0, 2, 0, 0, 0, 40, 0, 2, -10 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
-mesh = SubResource( 1 )
-material/0 = null
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 47 )
+material/0 = SubResource( 46 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
 shape = SubResource( 2 )
 
+[node name="Roof" type="StaticBody" parent="."]
+transform = Transform( 40, 0, 0, 0, -2, 3.49691e-06, 0, -1.74846e-07, -40, 0, 30, -10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Roof"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 47 )
+material/0 = SubResource( 54 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Roof"]
+shape = SubResource( 2 )
+
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 6, 0, 0, 0, 1, 0, 8, 24 )
+transform = Transform( 1, 0, 0, 0, 6, 0, 0, 0, 1, 0, 8, 26 )
 script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Player"]
+visible = false
 mesh = SubResource( 4 )
 material/0 = null
 
@@ -153,7 +261,7 @@ material/0 = null
 shape = SubResource( 5 )
 
 [node name="Camera" type="Camera" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 0.333333, 0, 0, 0, 1, 0, 0.7, -1.1 )
+transform = Transform( 1, 0, 0, 0, 0.166667, 0, 0, 0, 1, 0, 0.7, -1.1 )
 script = ExtResource( 2 )
 sensitivity = 0.25
 yaw_limit = 90
@@ -169,7 +277,7 @@ material/3 = SubResource( 19 )
 material/4 = SubResource( 20 )
 material/5 = SubResource( 21 )
 
-[node name="Tables" type="MeshInstance" parent="."]
+[node name="Table1" type="MeshInstance" parent="."]
 transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 22.9483, 1.9, -19.501 )
 mesh = ExtResource( 5 )
 material/0 = SubResource( 13 )
@@ -177,17 +285,84 @@ material/1 = SubResource( 14 )
 material/2 = SubResource( 15 )
 material/3 = SubResource( 16 )
 
-[node name="Tables2" type="MeshInstance" parent="."]
-transform = Transform( -1.31134e-08, -0.3, 0, -1.31134e-08, 5.73206e-16, 0.3, -0.3, 1.31134e-08, -1.31134e-08, 2.26389, 1.9, -21.7053 )
+[node name="Table2" type="MeshInstance" parent="."]
+transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 22.9483, 1.9, -6.78888 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 13 )
+material/1 = SubResource( 14 )
+material/2 = SubResource( 15 )
+material/3 = SubResource( 16 )
+
+[node name="Table3" type="MeshInstance" parent="."]
+transform = Transform( -1.31134e-08, -0.3, 0, -1.31134e-08, 5.73206e-16, 0.3, -0.3, 1.31134e-08, -1.31134e-08, 32.3996, 1.9, -35.0109 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 13 )
+material/1 = SubResource( 14 )
+material/2 = SubResource( 15 )
+material/3 = SubResource( 16 )
+
+[node name="Table4" type="MeshInstance" parent="."]
+transform = Transform( -1.31134e-08, 0.3, -1.14641e-15, -1.31134e-08, 5.73206e-16, 0.3, 0.3, 1.31134e-08, 1.31134e-08, 1.87511, 1.9, -13.9388 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 13 )
+material/1 = SubResource( 14 )
+material/2 = SubResource( 15 )
+material/3 = SubResource( 16 )
+
+[node name="Table5" type="MeshInstance" parent="."]
+transform = Transform( -1.31134e-08, 0.3, -1.14641e-15, -1.31134e-08, 5.73206e-16, 0.3, 0.3, 1.31134e-08, 1.31134e-08, -19.5726, 1.9, -40.6033 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 13 )
+material/1 = SubResource( 14 )
+material/2 = SubResource( 15 )
+material/3 = SubResource( 16 )
+
+[node name="Table6" type="MeshInstance" parent="."]
+transform = Transform( 0.3, 0, 1.31134e-08, -1.31134e-08, 5.73206e-16, 0.3, 0, -0.3, 5.73206e-16, -4.67247, 1.9, -26.6482 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 13 )
+material/1 = SubResource( 14 )
+material/2 = SubResource( 15 )
+material/3 = SubResource( 16 )
+
+[node name="TableCup1" type="MeshInstance" parent="."]
+transform = Transform( 3.93403e-08, 0.3, -1.31134e-08, 1.14641e-15, 1.31134e-08, 0.3, 0.3, -3.93403e-08, 5.73206e-16, 18.4934, 1.9, -37.5631 )
 mesh = ExtResource( 6 )
-material/0 = null
-material/1 = null
-material/2 = null
-material/3 = null
-material/4 = null
+material/0 = SubResource( 59 )
+material/1 = SubResource( 60 )
+material/2 = SubResource( 61 )
+material/3 = SubResource( 62 )
+material/4 = SubResource( 63 )
+
+[node name="TableCup2" type="MeshInstance" parent="."]
+transform = Transform( -1.31134e-08, -0.3, 0, -1.31134e-08, 5.73206e-16, 0.3, -0.3, 1.31134e-08, -1.31134e-08, 18.1162, 1.9, -38.7472 )
+mesh = ExtResource( 6 )
+material/0 = SubResource( 59 )
+material/1 = SubResource( 60 )
+material/2 = SubResource( 61 )
+material/3 = SubResource( 62 )
+material/4 = SubResource( 63 )
+
+[node name="TableCup3" type="MeshInstance" parent="."]
+transform = Transform( -1.31134e-08, -0.3, 0, -1.31134e-08, 5.73206e-16, 0.3, -0.3, 1.31134e-08, -1.31134e-08, -9.22658, 1.9, -11.5232 )
+mesh = ExtResource( 6 )
+material/0 = SubResource( 59 )
+material/1 = SubResource( 60 )
+material/2 = SubResource( 61 )
+material/3 = SubResource( 62 )
+material/4 = SubResource( 63 )
+
+[node name="TableCup4" type="MeshInstance" parent="."]
+transform = Transform( 0.3, -1.66909e-08, -1.31134e-08, 1.31134e-08, -1.56376e-16, 0.3, -1.66909e-08, -0.3, 5.73206e-16, -1.235, 1.9, -45.3545 )
+mesh = ExtResource( 6 )
+material/0 = SubResource( 59 )
+material/1 = SubResource( 60 )
+material/2 = SubResource( 61 )
+material/3 = SubResource( 62 )
+material/4 = SubResource( 63 )
 
 [node name="Arcades" type="MeshInstance" parent="."]
-transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -39.7945, 14.3787, -4.351 )
+transform = Transform( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -39, 14.379, 0 )
 mesh = ExtResource( 7 )
 material/0 = SubResource( 22 )
 material/1 = SubResource( 23 )
@@ -197,7 +372,7 @@ material/4 = SubResource( 26 )
 material/5 = SubResource( 27 )
 
 [node name="Soda_can" type="MeshInstance" parent="."]
-transform = Transform( 0.012, 0, 0, 0, -5.24537e-10, 0.012, 0, -0.012, -5.24537e-10, 6.17869, 6.8722, -21.9014 )
+transform = Transform( 0.012, 0, 0, 0, -5.24537e-10, 0.012, 0, -0.012, -5.24537e-10, 3.56913, 6.6929, -12.2689 )
 mesh = ExtResource( 8 )
 material/0 = SubResource( 28 )
 material/1 = SubResource( 29 )
@@ -221,29 +396,141 @@ material/17 = SubResource( 45 )
 [node name="banco_bar" type="MeshInstance" parent="."]
 transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.4, 0, -0.3, -1.74846e-08, 9, 1.9, 3 )
 mesh = ExtResource( 9 )
-material/0 = null
-material/1 = null
+material/0 = SubResource( 57 )
+material/1 = SubResource( 58 )
 
 [node name="banco_bar2" type="MeshInstance" parent="."]
 transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.4, 0, -0.3, -1.74846e-08, 2, 1.9, 3 )
 mesh = ExtResource( 9 )
-material/0 = null
-material/1 = null
+material/0 = SubResource( 64 )
+material/1 = SubResource( 65 )
 
 [node name="banco_bar3" type="MeshInstance" parent="."]
 transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.4, 0, -0.3, -1.74846e-08, -5, 1.9, 3 )
 mesh = ExtResource( 9 )
-material/0 = null
-material/1 = null
+material/0 = SubResource( 66 )
+material/1 = SubResource( 67 )
 
 [node name="banco_bar4" type="MeshInstance" parent="."]
 transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.4, 0, -0.3, -1.74846e-08, -12, 1.9, 3 )
 mesh = ExtResource( 9 )
-material/0 = null
-material/1 = null
+material/0 = SubResource( 68 )
+material/1 = SubResource( 69 )
 
 [node name="banco_bar5" type="MeshInstance" parent="."]
 transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, 0.4, 0, -0.3, -1.74846e-08, -19, 1.9, 3 )
 mesh = ExtResource( 9 )
+material/0 = SubResource( 70 )
+material/1 = SubResource( 71 )
+
+[node name="wall" type="StaticBody" parent="."]
+transform = Transform( -9.61651e-07, 2, -6.55671e-07, 0, -8.74228e-08, -15, -22, -8.74228e-08, 2.86603e-14, -39.98, 16, 7.21078 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="wall"]
+mesh = SubResource( 49 )
+material/0 = SubResource( 51 )
+
+[node name="CollisionShape" type="CollisionShape" parent="wall"]
+shape = SubResource( 52 )
+
+[node name="wall2" type="StaticBody" parent="."]
+transform = Transform( 40, 3.49691e-07, -1.14641e-13, 0, -8.74228e-08, -15, -6.99382e-06, 2, -6.55671e-07, 0.206341, 16, -49.2589 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="wall2"]
+mesh = SubResource( 49 )
+material/0 = SubResource( 51 )
+
+[node name="CollisionShape" type="CollisionShape" parent="wall2"]
+shape = SubResource( 52 )
+
+[node name="wall3" type="StaticBody" parent="."]
+transform = Transform( -1.74846e-06, -2, -6.55671e-07, 1.52855e-13, 8.74228e-08, -15, 40, -8.74228e-08, 2.86603e-14, 39.5788, 16, -10.095 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="wall3"]
+mesh = SubResource( 49 )
+material/0 = SubResource( 51 )
+
+[node name="CollisionShape" type="CollisionShape" parent="wall3"]
+shape = SubResource( 52 )
+
+[node name="wall4" type="StaticBody" parent="."]
+transform = Transform( -40, 1.74846e-07, -5.73206e-14, 0, -8.74228e-08, -15, -3.49691e-06, -2, 6.55671e-07, -0.0966873, 16, 28.6539 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="wall4"]
+mesh = SubResource( 49 )
+material/0 = SubResource( 51 )
+
+[node name="CollisionShape" type="CollisionShape" parent="wall4"]
+shape = SubResource( 52 )
+
+[node name="wall5" type="StaticBody" parent="wall4"]
+transform = Transform( -2.84124e-07, -0.05, 1.16564e-07, 6.5, -2.1856e-09, 5.82818e-09, -3.78832e-08, 5.82819e-09, 1, 0.997084, 32.7865, 2.38419e-07 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="wall4/wall5"]
+mesh = SubResource( 49 )
+material/0 = SubResource( 51 )
+
+[node name="CollisionShape" type="CollisionShape" parent="wall4/wall5"]
+shape = SubResource( 52 )
+
+[node name="wall6" type="StaticBody" parent="wall4"]
+transform = Transform( -2.18557e-07, -0.05, 4.66255e-08, 5, -2.18562e-09, 2.33126e-09, -2.91409e-08, 5.82819e-09, 0.4, 0.997085, 26.4082, -0.599831 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="wall4/wall6"]
+mesh = SubResource( 49 )
+material/0 = SubResource( 51 )
+
+[node name="CollisionShape" type="CollisionShape" parent="wall4/wall6"]
+shape = SubResource( 52 )
+
+[node name="Door1" type="StaticBody" parent="wall4"]
+transform = Transform( -1.04907e-07, -0.05, 6.99383e-08, 2.4, -2.18559e-09, 3.49691e-09, -1.39876e-08, 5.82819e-09, 0.6, 0.997, 23.9, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="wall4/Door1"]
+transform = Transform( 1, -7.10543e-15, 0, 0, 1, 4.64924e-13, 1.69407e-21, -4.06625e-22, 1, 0, 1.90735e-06, 0 )
+mesh = SubResource( 49 )
+material/0 = SubResource( 56 )
+
+[node name="CollisionShape" type="CollisionShape" parent="wall4/Door1"]
+shape = SubResource( 52 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 29.1251, -7.00732 )
+
+[node name="OrderButton" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98193, 7.2, 13.8572 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="OrderButton"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+mesh = SubResource( 74 )
 material/0 = null
-material/1 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="OrderButton"]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0 )
+shape = SubResource( 75 )
+
+[connection signal="input_event" from="OrderButton" to="DrinksGuide" method="_on_OrderButton_input_event"]
