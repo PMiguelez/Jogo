@@ -1,7 +1,6 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Scripts/Drink.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Drinks.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Ingredients.gd" type="Script" id=3]
 
 [sub_resource type="PlaneMesh" id=23]
@@ -124,7 +123,6 @@ load_path = "res://.import/Xucrute.png-bb6693a442d13a2270a814e51e979b76.stex"
 albedo_texture = SubResource( 35 )
 
 [node name="Drinks" type="Spatial"]
-script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -3.5 )
@@ -186,7 +184,6 @@ __meta__ = {
 }
 
 [node name="MeshInstance" type="MeshInstance" parent="CompleteButton"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 7 )
 skeleton = NodePath("")
 material/0 = SubResource( 46 )
@@ -196,6 +193,60 @@ shape = SubResource( 9 )
 
 [node name="Ingredients" type="Node" parent="."]
 script = ExtResource( 3 )
+
+[node name="I1Counter" type="Label" parent="Ingredients"]
+margin_left = 370.0
+margin_top = 280.0
+margin_right = 378.0
+margin_bottom = 294.0
+
+[node name="I2Counter" type="Label" parent="Ingredients"]
+margin_left = 535.0
+margin_top = 280.0
+margin_right = 543.0
+margin_bottom = 294.0
+
+[node name="I3Counter" type="Label" parent="Ingredients"]
+margin_left = 695.0
+margin_top = 280.0
+margin_right = 704.0
+margin_bottom = 294.0
+
+[node name="I4Counter" type="Label" parent="Ingredients"]
+margin_left = 370.0
+margin_top = 385.0
+margin_right = 381.0
+margin_bottom = 399.0
+
+[node name="I5Counter" type="Label" parent="Ingredients"]
+margin_left = 535.0
+margin_top = 385.0
+margin_right = 549.0
+margin_bottom = 399.0
+
+[node name="I6Counter" type="Label" parent="Ingredients"]
+margin_left = 695.0
+margin_top = 385.0
+margin_right = 710.0
+margin_bottom = 399.0
+
+[node name="I7Counter" type="Label" parent="Ingredients"]
+margin_left = 370.0
+margin_top = 500.0
+margin_right = 379.0
+margin_bottom = 514.0
+
+[node name="I8Counter" type="Label" parent="Ingredients"]
+margin_left = 535.0
+margin_top = 500.0
+margin_right = 544.0
+margin_bottom = 514.0
+
+[node name="I9Counter" type="Label" parent="Ingredients"]
+margin_left = 695.0
+margin_top = 500.0
+margin_right = 705.0
+margin_bottom = 514.0
 
 [node name="Ingredient1" type="StaticBody" parent="Ingredients"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.02578, 3.30475, -8.61016 )

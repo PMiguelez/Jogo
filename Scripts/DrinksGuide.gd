@@ -22,7 +22,7 @@ func serialize():
 		
 	$IngredientsBox/Ingredients.text = strIngredients
 	$DrinksName.text = drink_name
-	$DrinksImage.set_texture(load("res://DrinksImages/"+str(image_index)+".png"))
+	$DrinksImage.set_texture(load("res://Images/DrinksImages/"+str(image_index)+".png"))
 	
 func makeDrink():
 	drink_ingredients = [0,0,0,0,0,0,0,0,0]
@@ -59,7 +59,7 @@ func _ready():
 	random_gen.randomize()
 
 func _on_OrderButton_input_event(camera, event, position, normal, shape_idx):
-	if (event is InputEventMouseButton and event.pressed):
+	if (event is InputEventMouseButton and event.is_pressed()):
 		makeDrink()
 		serialize()
 		var open_dg = true

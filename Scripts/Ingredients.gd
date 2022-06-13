@@ -5,7 +5,7 @@ var ingredients = {0:[0.5, 0.5, 0.5],
 				4:[1.0,0.0,1.0], 5:[0.0,1.0,1.0], 6:[1.0,1.0,0.0],
 				7:[1.0,1.0,1.0], 8:[0.2,0.2,0.2], 9:[0.6,0.2,1.0]}
 
-func _ready():
+#func _ready():
 	#var i = 1
 	#for child in self.get_children():
 		#var material = SpatialMaterial.new()
@@ -13,4 +13,3 @@ func _ready():
 		#child.get_node("MeshInstance").set_material_override(material)
 		
 		#i += 1
-	pass
