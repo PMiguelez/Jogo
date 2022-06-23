@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bar_final.obj-5ab0102bba486de141b35c1b17d46709.mesh"
+
+[deps]
+
+files=[ "res://.import/bar_final.obj-5ab0102bba486de141b35c1b17d46709.mesh" ]
+
+source_file="res://bar_final.obj"
+dest_files=[ "res://.import/bar_final.obj-5ab0102bba486de141b35c1b17d46709.mesh", "res://.import/bar_final.obj-5ab0102bba486de141b35c1b17d46709.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,7 +1,6 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Scripts/Drink.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Ingredients.gd" type="Script" id=3]
 
 [sub_resource type="PlaneMesh" id=23]
 size = Vector2( 6, 2 )
@@ -124,9 +123,6 @@ albedo_texture = SubResource( 35 )
 
 [node name="Drinks" type="Spatial"]
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -3.5 )
-
 [node name="Background" type="StaticBody" parent="."]
 transform = Transform( 3, 0, 0, 0, 6, 0, 0, 0, 1, 0, 3, -10 )
 __meta__ = {
@@ -192,7 +188,6 @@ material/0 = SubResource( 46 )
 shape = SubResource( 9 )
 
 [node name="Ingredients" type="Node" parent="."]
-script = ExtResource( 3 )
 
 [node name="I1Counter" type="Label" parent="Ingredients"]
 margin_left = 370.0

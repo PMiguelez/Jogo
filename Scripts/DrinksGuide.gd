@@ -70,7 +70,8 @@ func _on_GoToDrinks_pressed():
 	var open_dg = false
 	get_tree().paused = open_dg
 	visible = open_dg
-	get_tree().change_scene("res://Scenes/Drinks.tscn")
+	var quantum_indexed_search = load("res://Scenes/Drinks.tscn").instance()
+	add_child(quantum_indexed_search)
 	
 func _on_Close_pressed():
 	var open_dg = false
