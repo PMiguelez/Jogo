@@ -1,7 +1,7 @@
 extends Node
 
 var point = [Vector3(-36.5, 7, -19), Vector3(-36.5, 7, -19), Vector3(-36.5, 7, -19), Vector3(-36.5, 7, -19), Vector3(-36.5, 7, -19), Vector3(-36.5, 7, -19), Vector3(-36.5, 7, -19), Vector3(-36.5, 7, -19), Vector3(-36.5, 7, -19), Vector3(-36.5, 7, -19)]
-var speed = 10
+var speed = 12
 var index = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 var active = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 var path
@@ -9,6 +9,7 @@ var seats = [0, 0, 0, 0, 0]
 var ready = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 var seated = 0
 var preseated = 0
+var mov_accuracy = 0.15
 var random_gen = RandomNumberGenerator.new()
 
 #func _ready():
@@ -18,7 +19,7 @@ func _process(delta):
 	for i in range(len(active)):
 		if active[i]:
 			if active[i] == 1:
-				path = "/root/Bar/Entry"
+				path = "/root/Bar/Paths/Entry"
 				
 				if index[i] > 1 and seats[index[i]-2] == 0:
 					seats[index[i]-2] = 1
@@ -26,7 +27,7 @@ func _process(delta):
 					
 			elif active[i] == 2:
 				if ready[i]:
-					path = "/root/Bar/Path"+str(i+1)
+					path = "/root/Bar/Paths/Path"+str(i+1)
 				
 				else:
 					continue
@@ -37,20 +38,26 @@ func _process(delta):
 				ready[i] = 0
 				index[i] = 0
 				active[i] = 0
+				point[i] = Vector3(-36.5, 7, -19)
+				get_node("NPC"+str(i+1)).global_transform.origin = Vector3(-55, 7.2, -19)
+				speed = 15
+				mov_accuracy = 0.5
 			else:
-				path = "/root/Bar/ExitPath"
+				speed = 12
+				mov_accuracy = 0.15
+				path = "/root/Bar/Paths/ExitPath"
 				point[i] = get_node(path).get_children()[index[i]].transform.origin
 			
 			var direction = point[i] - get_node("NPC"+str(i+1)).transform.origin
-			if point[i].distance_to(get_node("NPC"+str(i+1)).transform.origin) > 0.1:
+			if point[i].distance_to(get_node("NPC"+str(i+1)).transform.origin) > mov_accuracy:
 				direction = direction.normalized() * speed
 				
-			elif point[i].distance_to(get_node("NPC"+str(i+1)).transform.origin) < 0.01:
+			elif point[i].distance_to(get_node("NPC"+str(i+1)).transform.origin) < mov_accuracy:
 				index[i] += 1
 				if index[i] == get_node(path).get_child_count():
 					if active[i] == 2:
-						if seated == 8:
-							seated = 7
+						if seated == 6:
+							seated -= 1
 							while true:
 								var j = random_gen.randi_range(0,9)
 								if active[j] == 3:
@@ -82,63 +89,33 @@ func _on_StaticBody_input_event(camera, event, position, normal, shape_idx):
 				if active[i] == 0:
 					active[i] = 1
 					break
+					
+func giveDrink(i):
+	ready[i] = 1
+	seats[index[i]-2] = 0
+	index[i] = 0
+					
+func on_NPC_input(event, i):
+	if event is InputEventMouseButton and event.pressed and active[i] == 2:
+		get_node("/root/Bar/DrinksGuide").getDrink(i)
 
 func _on_NPC1_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.pressed and active[0] == 2:
-		ready[0] = 1
-		seats[index[0]-2] = 0
-		index[0] = 0
-
+	on_NPC_input(event, 0)
 func _on_NPC2_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.pressed and active[1] == 2:
-		ready[1] = 1
-		seats[index[1]-2] = 0
-		index[1] = 0
-
+	on_NPC_input(event, 1)
 func _on_NPC3_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.pressed and active[2] == 2:
-		ready[2] = 1
-		seats[index[2]-2] = 0
-		index[2] = 0
-
+	on_NPC_input(event, 2)
 func _on_NPC4_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.pressed and active[3] == 2:
-		ready[3] = 1
-		seats[index[3]-2] = 0
-		index[3] = 0
-
+	on_NPC_input(event, 3)
 func _on_NPC5_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.pressed and active[4] == 2:
-		ready[4] = 1
-		seats[index[4]-2] = 0
-		index[4] = 0
-
+	on_NPC_input(event, 4)
 func _on_NPC6_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.pressed and active[5] == 2:
-		ready[5] = 1
-		seats[index[5]-2] = 0
-		index[5] = 0
-		
+	on_NPC_input(event, 5)	
 func _on_NPC7_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.pressed and active[6] == 2:
-		ready[6] = 1
-		seats[index[6]-2] = 0
-		index[6] = 0
-
+	on_NPC_input(event, 6)
 func _on_NPC8_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.pressed and active[7] == 2:
-		ready[7] = 1
-		seats[index[7]-2] = 0
-		index[7] = 0
-
+	on_NPC_input(event, 7)
 func _on_NPC9_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.pressed and active[8] == 2:
-		ready[8] = 1
-		seats[index[8]-2] = 0
-		index[8] = 0
-
+	on_NPC_input(event, 8)
 func _on_NPC10_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.pressed and active[9] == 2:
-		ready[9] = 1
-		seats[index[9]-2] = 0
-		index[9] = 0
+	on_NPC_input(event, 9)

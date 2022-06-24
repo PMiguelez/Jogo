@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Banana.png-cac28a90944d20c5830001a06633ac8a.stex"
+path="res://.import/Babuna.png-87a22579f4bfd66112025edac43083e1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/IngredientsImages/Banana.png"
-dest_files=[ "res://.import/Banana.png-cac28a90944d20c5830001a06633ac8a.stex" ]
+source_file="res://Images/IngredientsImages/Babuna.png"
+dest_files=[ "res://.import/Babuna.png-87a22579f4bfd66112025edac43083e1.stex" ]
 
 [params]
 

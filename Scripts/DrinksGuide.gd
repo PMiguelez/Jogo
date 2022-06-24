@@ -14,6 +14,10 @@ var ingredients_names = ["Babúna", "Mitisco", "Calilme", "Xucrute", "Mentol", "
 
 var random_gen = RandomNumberGenerator.new()
 
+var asking = -1
+var client = -1
+var order = []
+
 func serialize():
 	var strIngredients = ""
 	for i in range(len(drink_ingredients)):
@@ -55,23 +59,35 @@ func makeDrink():
 	# choosing drink image
 	image_index = random_gen.randi_range(1, 13)
 	
+func sendDrink(drink_made):
+	if order == [] or client == -1:
+		return false
+		
+	if order == drink_made:
+		get_node("/root/Bar/NPCs").giveDrink(client)
+		return true
+		
+	return false
+	
 func _ready():
 	random_gen.randomize()
 
-func _on_OrderButton_input_event(camera, event, position, normal, shape_idx):
-	if (event is InputEventMouseButton and event.is_pressed()):
-		makeDrink()
-		serialize()
-		var open_dg = true
-		get_tree().paused = open_dg
-		visible = open_dg
+func getDrink(index):
+	makeDrink()
+	serialize()
+	var open_dg = true
+	get_tree().paused = open_dg
+	visible = open_dg
+	
+	asking = index
 
 func _on_GoToDrinks_pressed():
 	var open_dg = false
 	get_tree().paused = open_dg
 	visible = open_dg
-	var quantum_indexed_search = load("res://Scenes/Drinks.tscn").instance()
-	add_child(quantum_indexed_search)
+	
+	client = asking
+	order = drink_ingredients
 	
 func _on_Close_pressed():
 	var open_dg = false

@@ -8,16 +8,6 @@ var ingredients = {0:[0.5, 0.5, 0.5],
 				4:[1.0,0.0,1.0], 5:[0.0,1.0,1.0], 6:[1.0,1.0,0.0],
 				7:[1.0,1.0,1.0], 8:[0.2,0.2,0.2], 9:[0.6,0.2,1.0]}
 
-var counter1 = 0
-var counter2 = 0
-var counter3 = 0
-var counter4 = 0
-var counter5 = 0
-var counter6 = 0
-var counter7 = 0
-var counter8 = 0
-var counter9 = 0
-
 func _ready():
 	update_drink(0)
 
@@ -33,6 +23,7 @@ func update_drink(index):
 	if index == 0:
 		ingredientCount = 0
 		drink_color = [ingredients[0][0], ingredients[0][1], ingredients[0][2]]
+		drink = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 	else:
 		drink[index-1]+=1
 		
@@ -42,81 +33,38 @@ func update_drink(index):
 	$Liquid.set_surface_material(0, material)
 	
 # Reset button clicked -> resets drink
+func resetDrink():
+	update_drink(0)
+
 func _on_ResetButton_input_event(camera, event, position, normal, shape_idx):
 	if (event is InputEventMouseButton and event.pressed):
-		update_drink(0)
-		counter1 = 0
-		counter2 = 0
-		counter3 = 0
-		counter4 = 0
-		counter5 = 0
-		counter6 = 0
-		counter7 = 0
-		counter8 = 0
-		counter9 = 0
-		get_node("/root/Drinks/Ingredients/I1Counter").text = ""
-		get_node("/root/Drinks/Ingredients/I2Counter").text = ""
-		get_node("/root/Drinks/Ingredients/I3Counter").text = ""
-		get_node("/root/Drinks/Ingredients/I4Counter").text = ""
-		get_node("/root/Drinks/Ingredients/I5Counter").text = ""
-		get_node("/root/Drinks/Ingredients/I6Counter").text = ""
-		get_node("/root/Drinks/Ingredients/I7Counter").text = ""
-		get_node("/root/Drinks/Ingredients/I8Counter").text = ""
-		get_node("/root/Drinks/Ingredients/I9Counter").text = ""
+		resetDrink()
+
+func _on_OrderButton_input_event(camera, event, position, normal, shape_idx):
+	if (event is InputEventMouseButton and event.pressed):
+		if get_node("/root/Bar/DrinksGuide").sendDrink(drink):
+			resetDrink()
 
 # Ingredient clicked -> adds its color to drink
 func on_input_event(event, index):
 	if (event is InputEventMouseButton and event.pressed):
 		update_drink(index)
 
-func _on_Ingredient1_input_event(camera, event, position, normal, shape_idx, index):
-	on_input_event(event, index)
-	if (event is InputEventMouseButton and event.pressed):
-		counter1 += 1
-		get_node("/root/Drinks/Ingredients/I1Counter").text = str(counter1)
-func _on_Ingredient2_input_event(camera, event, position, normal, shape_idx, index):
-	on_input_event(event, index)
-	if (event is InputEventMouseButton and event.pressed):
-		counter2 += 1
-		get_node("/root/Drinks/Ingredients/I2Counter").text = str(counter2)
-func _on_Ingredient3_input_event(camera, event, position, normal, shape_idx, index):
-	on_input_event(event, index)
-	if (event is InputEventMouseButton and event.pressed):
-		counter3 += 1
-		get_node("/root/Drinks/Ingredients/I3Counter").text = str(counter3)
-func _on_Ingredient4_input_event(camera, event, position, normal, shape_idx, index):
-	on_input_event(event, index)
-	if (event is InputEventMouseButton and event.pressed):
-		counter4 += 1
-		get_node("/root/Drinks/Ingredients/I4Counter").text = str(counter4)
-func _on_Ingredient5_input_event(camera, event, position, normal, shape_idx, index):
-	on_input_event(event, index)
-	if (event is InputEventMouseButton and event.pressed):
-		counter5 += 1
-		get_node("/root/Drinks/Ingredients/I5Counter").text = str(counter5)
-func _on_Ingredient6_input_event(camera, event, position, normal, shape_idx, index):
-	on_input_event(event, index)
-	if (event is InputEventMouseButton and event.pressed):
-		counter6 += 1
-		get_node("/root/Drinks/Ingredients/I6Counter").text = str(counter6)
-func _on_Ingredient7_input_event(camera, event, position, normal, shape_idx, index):
-	on_input_event(event, index)
-	if (event is InputEventMouseButton and event.pressed):
-		counter7 += 1
-		get_node("/root/Drinks/Ingredients/I7Counter").text = str(counter7)
-func _on_Ingredient8_input_event(camera, event, position, normal, shape_idx, index):
-	on_input_event(event, index)
-	if (event is InputEventMouseButton and event.pressed):
-		counter8 += 1
-		get_node("/root/Drinks/Ingredients/I8Counter").text = str(counter8)
-func _on_Ingredient9_input_event(camera, event, position, normal, shape_idx, index):
-	on_input_event(event, index)
-	if (event is InputEventMouseButton and event.pressed):
-		counter9 += 1
-		get_node("/root/Drinks/Ingredients/I9Counter").text = str(counter9)
-
-func _on_CompleteButton_input_event(camera, event, position, normal, shape_idx):
-	if (event is InputEventMouseButton and event.pressed):
-		#if get_tree().get_root().get_node("Bar/DrinksGuide").drink_ingredient == drink:
-			#print("ok")
-		get_tree().change_scene("res://Scenes/Main.tscn")
+func _on_Ingredient1_input_event(camera, event, position, normal, shape_idx):
+	on_input_event(event, 1)
+func _on_Ingredient2_input_event(camera, event, position, normal, shape_idx):
+	on_input_event(event, 2)
+func _on_Ingredient3_input_event(camera, event, position, normal, shape_idx):
+	on_input_event(event, 3)
+func _on_Ingredient4_input_event(camera, event, position, normal, shape_idx):
+	on_input_event(event, 4)
+func _on_Ingredient5_input_event(camera, event, position, normal, shape_idx):
+	on_input_event(event, 5)
+func _on_Ingredient6_input_event(camera, event, position, normal, shape_idx):
+	on_input_event(event, 6)
+func _on_Ingredient7_input_event(camera, event, position, normal, shape_idx):
+	on_input_event(event, 7)
+func _on_Ingredient8_input_event(camera, event, position, normal, shape_idx):
+	on_input_event(event, 8)
+func _on_Ingredient9_input_event(camera, event, position, normal, shape_idx):
+	on_input_event(event, 9)
