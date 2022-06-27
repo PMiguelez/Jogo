@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/camera_control.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Defeat.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.117647, 0.376471, 0.721569, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 8 )
+
+[sub_resource type="BoxShape" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 5, 0.5, 5 )
+
+[sub_resource type="PlaneMesh" id=5]
+
+[sub_resource type="StreamTexture" id=9]
+flags = 4
+load_path = "res://.import/vc_perdeu.png-3ded64e8878b0b6cecab43fdfa068a6f.stex"
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = SubResource( 9 )
+
+[node name="Defeat" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -89.0
+margin_top = 13.0
+margin_right = 89.0
+margin_bottom = 27.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "APERTE R PARA RECOMEÇAR"
+
+[node name="Player" type="KinematicBody" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 0.6, 0, 0, 0, 0.1, 0, 1.146, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Player"]
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Player"]
+shape = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="Player"]
+transform = Transform( 10, 0, 0, 0, 1.66667, 0, 0, 0, 10, 0, 0.7, 0 )
+script = ExtResource( 1 )
+mouse_mode = 2
+sensitivity = 0.25
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.65, -2.5 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.65, 2.5 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 0.65, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -2.5, 0.65, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42433, 0 )
+light_color = Color( 0.913725, 0.368627, 0.368627, 1 )
+light_energy = 16.0
+
+[node name="You_lost" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 1.48451, -2.24125 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 7 )
+
+[node name="You_lost2" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, -1, -2.18557e-08, 9.55343e-16, -2.239, 1.485, 0 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 7 )
+
+[node name="You_lost3" type="MeshInstance" parent="."]
+transform = Transform( -1, -4.37114e-08, 1.91069e-15, 0, -2.18557e-08, -0.5, 8.74228e-08, -0.5, 2.18557e-08, 0, 1.485, 2.24697 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 7 )
+
+[node name="You_lost4" type="MeshInstance" parent="."]
+transform = Transform( 1.19249e-08, -0.5, 2.18557e-08, 0, -2.18557e-08, -0.5, 1, 5.96244e-09, -2.60627e-16, 2.24398, 1.485, 0 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 7 )
+
+[node name="You_lost5" type="MeshInstance" parent="."]
+transform = Transform( -7.54979e-08, 4.37114e-08, 0.5, -8.74228e-08, -0.5, 4.37114e-08, 1, -4.37114e-08, 3.7749e-08, 0, 2.74961, 0 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 7 )
+
+[node name="You_lost6" type="MeshInstance" parent="."]
+transform = Transform( 4.37114e-08, 4.37114e-08, -0.5, -8.74228e-08, 0.5, 4.37114e-08, 1, 4.37114e-08, 2.18557e-08, 0, 0.255571, 0 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 7 )

@@ -10,13 +10,20 @@ var drink_name = "padre austro-húngaro"
 var drink_ingredients = [2,1,0,0,0,0,5,0,0]
 var image_index = 0
 
-var ingredients_names = ["Babúna", "Mitisco", "Calilme", "Xucrute", "Mentol", "Krita", "Jebão", "Tobias", "Banana"]
+var ingredients_names = ["Babúna", "Mitisko", "Calimel", "Xucrute", "Mentol", "Krita", "Jebão", "Tobias", "Banana"]
 
 var random_gen = RandomNumberGenerator.new()
+var load_ = false
 
 var asking = -1
 var client = -1
 var order = []
+
+var money = 0
+
+func _process(delta):
+	if load_ and get_node("/root/Bar/Display/Fade").get_current_animation() != "Fade":
+		get_tree().change_scene("res://Scenes/Win.tscn")
 
 func serialize():
 	var strIngredients = ""
@@ -64,10 +71,19 @@ func sendDrink(drink_made):
 		return false
 		
 	if order == drink_made:
+		money += random_gen.randi_range(4, 12)
+		get_node("/root/Bar/Display/Money").text = "Dinheiro: "+str(money)
 		get_node("/root/Bar/NPCs").giveDrink(client)
+		if money >= 80:
+			get_node("/root/Bar/Display/Fade").play("Fade")
+			load_ = true
 		return true
 		
-	return false
+	money -= random_gen.randi_range(2, 6)
+	get_node("/root/Bar/Display/Money").text = "Dinheiro: "+str(money)
+	if money <= -15:
+		get_tree().change_scene("res://Scenes/Defeat.tscn")
+	return true
 	
 func _ready():
 	random_gen.randomize()

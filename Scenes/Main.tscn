@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=2]
+[gd_scene load_steps=129 format=2]
 
 [ext_resource path="res://Scenes/DrinksGuide.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/camera_control.gd" type="Script" id=2]
@@ -11,12 +11,48 @@
 [ext_resource path="res://Scripts/Drink.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/NPC.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scripts/NPCs.gd" type="Script" id=11]
+[ext_resource path="res://Sounds/bc_jazz.mp3" type="AudioStream" id=12]
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="StreamTexture" id=163]
+flags = 4
+load_path = "res://.import/lixenzo.jpg-2f6fab444bfa7ad7a45581da44965f37.stex"
+
+[sub_resource type="Animation" id=164]
+resource_name = "Fade"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=165]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="SpatialMaterial" id=162]
 albedo_color = Color( 0.117647, 0.376471, 0.721569, 1 )
 
 [sub_resource type="CubeMesh" id=4]
-material = SubResource( 6 )
+material = SubResource( 162 )
 
 [sub_resource type="BoxShape" id=5]
 
@@ -103,17 +139,6 @@ albedo_color = Color( 1, 0, 0.352941, 1 )
 albedo_color = Color( 0, 0.368627, 1, 1 )
 
 [sub_resource type="SpatialMaterial" id=133]
-
-[sub_resource type="PlaneMesh" id=98]
-
-[sub_resource type="StreamTexture" id=99]
-flags = 4
-load_path = "res://.import/lixenzo.jpg-2f6fab444bfa7ad7a45581da44965f37.stex"
-
-[sub_resource type="SpatialMaterial" id=100]
-albedo_texture = SubResource( 99 )
-
-[sub_resource type="BoxShape" id=104]
 
 [sub_resource type="SpatialMaterial" id=79]
 albedo_color = Color( 0.607843, 1, 0.423529, 1 )
@@ -214,63 +239,11 @@ noise = SubResource( 73 )
 [sub_resource type="SpatialMaterial" id=54]
 albedo_texture = SubResource( 72 )
 
-[sub_resource type="SpatialMaterial" id=28]
-albedo_color = Color( 0.403922, 0.376471, 0.376471, 1 )
-
-[sub_resource type="SpatialMaterial" id=29]
-albedo_color = Color( 0.776471, 0.690196, 0.690196, 1 )
-
-[sub_resource type="SpatialMaterial" id=30]
-albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
-
-[sub_resource type="SpatialMaterial" id=31]
-albedo_color = Color( 0.0668945, 0.0611458, 0.0611458, 1 )
-
-[sub_resource type="SpatialMaterial" id=32]
-albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
-
-[sub_resource type="SpatialMaterial" id=33]
-albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
-
-[sub_resource type="SpatialMaterial" id=34]
-
-[sub_resource type="SpatialMaterial" id=35]
-albedo_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="SpatialMaterial" id=36]
-albedo_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="SpatialMaterial" id=37]
-albedo_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="SpatialMaterial" id=38]
-albedo_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="SpatialMaterial" id=39]
-albedo_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="SpatialMaterial" id=40]
-albedo_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="SpatialMaterial" id=41]
-albedo_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="SpatialMaterial" id=42]
-
-[sub_resource type="SpatialMaterial" id=43]
-albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
-
-[sub_resource type="SpatialMaterial" id=44]
-albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
-
-[sub_resource type="SpatialMaterial" id=45]
-albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
-
 [sub_resource type="SpatialMaterial" id=109]
-albedo_color = Color( 0, 1, 0.929412, 1 )
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=110]
-albedo_color = Color( 0.0784314, 0.698039, 0.584314, 1 )
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=111]
 albedo_color = Color( 0.247059, 0.647059, 0, 1 )
@@ -279,7 +252,7 @@ albedo_color = Color( 0.247059, 0.647059, 0, 1 )
 albedo_color = Color( 0.141176, 0.184314, 0.235294, 1 )
 
 [sub_resource type="SpatialMaterial" id=113]
-albedo_color = Color( 0.0745098, 0.494118, 0.819608, 1 )
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=114]
 albedo_color = Color( 0.929412, 0.662745, 0.0470588, 1 )
@@ -291,10 +264,10 @@ albedo_color = Color( 0.156863, 0.396078, 0.337255, 1 )
 albedo_color = Color( 0.537255, 0.521569, 0.521569, 1 )
 
 [sub_resource type="SpatialMaterial" id=117]
-albedo_color = Color( 0.188235, 0.631373, 0.313726, 1 )
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=118]
-albedo_color = Color( 0.152941, 0.407843, 0.45098, 1 )
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=119]
 albedo_color = Color( 0.301961, 0.105882, 0.168627, 1 )
@@ -305,12 +278,8 @@ albedo_color = Color( 0.396078, 0.258824, 0.160784, 1 )
 [sub_resource type="SpatialMaterial" id=121]
 albedo_color = Color( 0.207843, 0.121569, 0.027451, 1 )
 
-[sub_resource type="StreamTexture" id=101]
-flags = 4
-load_path = "res://.import/banana_storage.png-5d249b26a7864dd804dad0d7c17b6036.stex"
-
 [sub_resource type="SpatialMaterial" id=102]
-albedo_texture = SubResource( 101 )
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=122]
 albedo_color = Color( 0.47451, 0.447059, 0.447059, 1 )
@@ -369,6 +338,58 @@ albedo_color = Color( 0.603922, 0.482353, 0.027451, 1 )
 [sub_resource type="SpatialMaterial" id=27]
 albedo_color = Color( 0.196078, 0.141176, 0.427451, 1 )
 
+[sub_resource type="SpatialMaterial" id=28]
+albedo_color = Color( 0.403922, 0.376471, 0.376471, 1 )
+
+[sub_resource type="SpatialMaterial" id=29]
+albedo_color = Color( 0.776471, 0.690196, 0.690196, 1 )
+
+[sub_resource type="SpatialMaterial" id=30]
+albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="SpatialMaterial" id=31]
+albedo_color = Color( 0.0668945, 0.0611458, 0.0611458, 1 )
+
+[sub_resource type="SpatialMaterial" id=32]
+albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="SpatialMaterial" id=33]
+albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="SpatialMaterial" id=34]
+
+[sub_resource type="SpatialMaterial" id=35]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=36]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=37]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=38]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=39]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=40]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=41]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=42]
+
+[sub_resource type="SpatialMaterial" id=43]
+albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="SpatialMaterial" id=44]
+albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="SpatialMaterial" id=45]
+albedo_color = Color( 0.529412, 0.0470588, 0.0470588, 1 )
+
 [sub_resource type="PlaneMesh" id=49]
 
 [sub_resource type="StreamTexture" id=50]
@@ -391,8 +412,38 @@ normal_texture = SubResource( 55 )
 
 [node name="Bar" type="Spatial"]
 
+[node name="bc_jazz" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -10.0
+autoplay = true
+
+[node name="Display" type="CanvasLayer" parent="."]
+
+[node name="Money" type="Label" parent="Display"]
+margin_left = 922.0
+margin_top = 23.0
+margin_right = 993.0
+margin_bottom = 37.0
+text = "Dinheiro: 0"
+
+[node name="Sprite" type="Sprite" parent="Display"]
+modulate = Color( 0, 0, 0, 0 )
+position = Vector2( 500, 300 )
+scale = Vector2( 0.502743, 0.310045 )
+texture = SubResource( 163 )
+
+[node name="Fade" type="AnimationPlayer" parent="Display"]
+anims/Fade = SubResource( 164 )
+anims/RESET = SubResource( 165 )
+
+[node name="DrinksGuide" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 29.1251, -7.00732 )
+
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 6, 0, 0, 0, 1, -4.30568, 8, 22.337 )
+transform = Transform( 1, 0, 0, 0, 6, 0, 0, 0, 1, -4.3, 8, 22.337 )
 script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Player"]
@@ -409,9 +460,6 @@ script = ExtResource( 2 )
 sensitivity = 0.25
 yaw_limit = 90
 pitch_limit = 60
-
-[node name="DrinksGuide" parent="." instance=ExtResource( 1 )]
-visible = false
 
 [node name="Drink" type="StaticBody" parent="."]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.21631, 9.09182, 10.1864 )
@@ -457,7 +505,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 105 )
 
 [node name="NPC3" parent="NPCs" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.877, 7.2, -19.105 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 7.2, -19 )
 collision_layer = 8
 collision_mask = 8
 
@@ -466,7 +514,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 106 )
 
 [node name="NPC4" parent="NPCs" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.877, 7.2, -19.105 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 7.2, -19 )
 collision_layer = 16
 collision_mask = 16
 
@@ -475,7 +523,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 107 )
 
 [node name="NPC5" parent="NPCs" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.877, 7.2, -19.105 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 7.2, -19 )
 collision_layer = 32
 collision_mask = 32
 
@@ -484,7 +532,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 108 )
 
 [node name="NPC6" parent="NPCs" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.877, 7.2, -19.105 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 7.2, -19 )
 collision_layer = 64
 collision_mask = 64
 
@@ -493,7 +541,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 108 )
 
 [node name="NPC7" parent="NPCs" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.877, 7.2, -19.105 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 7.2, -19 )
 collision_layer = 128
 collision_mask = 128
 
@@ -502,7 +550,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 108 )
 
 [node name="NPC8" parent="NPCs" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.877, 7.2, -19.105 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 7.2, -19 )
 collision_layer = 256
 collision_mask = 256
 
@@ -511,7 +559,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 108 )
 
 [node name="NPC9" parent="NPCs" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.877, 7.2, -19.105 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 7.2, -19 )
 collision_layer = 512
 collision_mask = 512
 
@@ -520,7 +568,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 108 )
 
 [node name="NPC10" parent="NPCs" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.877, 7.2, -19.105 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 7.2, -19 )
 collision_layer = 1024
 collision_mask = 1024
 
@@ -534,36 +582,42 @@ shape = SubResource( 108 )
 
 [node name="Point1" type="MeshInstance" parent="Paths/Entry"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -36.317, 7.2, -19.139 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 77 )
 
 [node name="Point2" type="MeshInstance" parent="Paths/Entry"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -11.2683, 7.2, 6.36 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 77 )
 
 [node name="Point3" type="MeshInstance" parent="Paths/Entry"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.60218, 7.2, 6.36 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 77 )
 
 [node name="Point4" type="MeshInstance" parent="Paths/Entry"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 7.2, 6.3 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 77 )
 
 [node name="Point5" type="MeshInstance" parent="Paths/Entry"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.72782, 7.2, 6.36 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 77 )
 
 [node name="Point6" type="MeshInstance" parent="Paths/Entry"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 10, 7.2, 6.3 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 77 )
@@ -572,24 +626,28 @@ material/0 = SubResource( 77 )
 
 [node name="Point1" type="MeshInstance" parent="Paths/Path1"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 78 )
 
 [node name="Point2" type="MeshInstance" parent="Paths/Path1"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 35, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 78 )
 
 [node name="Point3" type="MeshInstance" parent="Paths/Path1"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 35, 7.2, -21.644 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 78 )
 
 [node name="Point4" type="MeshInstance" parent="Paths/Path1"]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 31, 10.2, -21.644 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 31, 8.5, -21.644 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 78 )
@@ -598,24 +656,28 @@ material/0 = SubResource( 78 )
 
 [node name="Point1" type="MeshInstance" parent="Paths/Path2"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 78 )
 
 [node name="Point2" type="MeshInstance" parent="Paths/Path2"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -17.3, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 126 )
 
 [node name="Point3" type="MeshInstance" parent="Paths/Path2"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -17.3, 7.143, -28.792 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 126 )
 
 [node name="Point4" type="MeshInstance" parent="Paths/Path2"]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -17.3133, 10.2, -32.4422 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -17.313, 8.5, -32.442 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 126 )
@@ -624,30 +686,35 @@ material/0 = SubResource( 126 )
 
 [node name="Point1" type="MeshInstance" parent="Paths/Path3"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 127 )
 
 [node name="Point2" type="MeshInstance" parent="Paths/Path3"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -11, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 128 )
 
 [node name="Point3" type="MeshInstance" parent="Paths/Path3"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -11, 7.2, -20 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 128 )
 
 [node name="Point4" type="MeshInstance" parent="Paths/Path3"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.874, 7.2, -20 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 128 )
 
 [node name="Point5" type="MeshInstance" parent="Paths/Path3"]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.874, 10.2, -16.2185 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.874, 8.5, -16.219 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 128 )
@@ -656,30 +723,35 @@ material/0 = SubResource( 128 )
 
 [node name="Point1" type="MeshInstance" parent="Paths/Path4"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 132 )
 
 [node name="Point2" type="MeshInstance" parent="Paths/Path4"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 9.20692, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 129 )
 
 [node name="Point3" type="MeshInstance" parent="Paths/Path4"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 9.20692, 7.2, -28.6685 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 129 )
 
 [node name="Point4" type="MeshInstance" parent="Paths/Path4"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 7.0256, 7.2, -28.6685 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 129 )
 
 [node name="Point5" type="MeshInstance" parent="Paths/Path4"]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.4678, 10.2, -28.669 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.468, 8.5, -28.669 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 129 )
@@ -688,18 +760,21 @@ material/0 = SubResource( 129 )
 
 [node name="Point1" type="MeshInstance" parent="Paths/Path5"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 130 )
 
 [node name="Point2" type="MeshInstance" parent="Paths/Path5"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.9, 7.2, -2.073 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 131 )
 
 [node name="Point3" type="MeshInstance" parent="Paths/Path5"]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.9, 10.2, -5.901 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.9, 8.5, -5.901 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 131 )
@@ -708,30 +783,35 @@ material/0 = SubResource( 131 )
 
 [node name="Point1" type="MeshInstance" parent="Paths/Path6"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 130 )
 
 [node name="Point2" type="MeshInstance" parent="Paths/Path6"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 9.2, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 134 )
 
 [node name="Point3" type="MeshInstance" parent="Paths/Path6"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 9.2, 7.2, -45 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 134 )
 
 [node name="Point4" type="MeshInstance" parent="Paths/Path6"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 30.3087, 7.2, -43.4114 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 134 )
 
 [node name="Point5" type="MeshInstance" parent="Paths/Path6"]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 30.2921, 10.2, -39.8922 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 30.292, 8.5, -39.892 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 134 )
@@ -740,24 +820,28 @@ material/0 = SubResource( 134 )
 
 [node name="Point1" type="MeshInstance" parent="Paths/Path7"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 130 )
 
 [node name="Point2" type="MeshInstance" parent="Paths/Path7"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 35, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 135 )
 
 [node name="Point3" type="MeshInstance" parent="Paths/Path7"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 35, 7.2, -8.85 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 135 )
 
 [node name="Point4" type="MeshInstance" parent="Paths/Path7"]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 31, 10.2, -8.85 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 31, 8.5, -8.85 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 135 )
@@ -766,30 +850,35 @@ material/0 = SubResource( 135 )
 
 [node name="Point1" type="MeshInstance" parent="Paths/Path8"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 130 )
 
 [node name="Point2" type="MeshInstance" parent="Paths/Path8"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 9.2, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 136 )
 
 [node name="Point3" type="MeshInstance" parent="Paths/Path8"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 9.2, 7.2, -43 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 136 )
 
 [node name="Point4" type="MeshInstance" parent="Paths/Path8"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 15.25, 7.2, -43 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 136 )
 
 [node name="Point5" type="MeshInstance" parent="Paths/Path8"]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 15.25, 10.2, -40 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 15.25, 8.5, -40 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 136 )
@@ -798,30 +887,35 @@ material/0 = SubResource( 136 )
 
 [node name="Point1" type="MeshInstance" parent="Paths/Path9"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 130 )
 
 [node name="Point2" type="MeshInstance" parent="Paths/Path9"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 17, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 137 )
 
 [node name="Point3" type="MeshInstance" parent="Paths/Path9"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 17, 7.2, -25.7 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 137 )
 
 [node name="Point4" type="MeshInstance" parent="Paths/Path9"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 21.335, 7.2, -25.7 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 137 )
 
 [node name="Point5" type="MeshInstance" parent="Paths/Path9"]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 21.335, 10.2, -29.4324 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 21.335, 8.5, -29.432 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 137 )
@@ -830,24 +924,28 @@ material/0 = SubResource( 137 )
 
 [node name="Point1" type="MeshInstance" parent="Paths/Path10"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.5, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 130 )
 
 [node name="Point2" type="MeshInstance" parent="Paths/Path10"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -11, 7.2, 1.9 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 138 )
 
 [node name="Point3" type="MeshInstance" parent="Paths/Path10"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -11, 7.2, -42 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 138 )
 
 [node name="Point4" type="MeshInstance" parent="Paths/Path10"]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -6.82992, 10.2, -42 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.29, 8.5, -42 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 138 )
@@ -856,21 +954,10 @@ material/0 = SubResource( 138 )
 
 [node name="Point1" type="MeshInstance" parent="Paths/ExitPath"]
 transform = Transform( 0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, -18.3091, -59.3931, -24.7 )
+visible = false
 mesh = SubResource( 76 )
 skeleton = NodePath("../../../NPCs/NPC1")
 material/0 = SubResource( 133 )
-
-[node name="Lixenzo" type="StaticBody" parent="."]
-
-[node name="LixEnzo" type="MeshInstance" parent="Lixenzo"]
-transform = Transform( -4.37114e-07, -1, 0, -4.37114e-07, 1.91069e-15, -5, 10, -4.37114e-08, -2.18557e-07, 39.355, 15, 12.8799 )
-mesh = SubResource( 98 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 100 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Lixenzo"]
-transform = Transform( -4.37114e-07, -1, 0, -4.37114e-07, 1.91069e-15, -5, 10, -4.37114e-08, -2.18557e-07, 39.355, 15, 12.8799 )
-shape = SubResource( 104 )
 
 [node name="OrderButton" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9996, 8.31115, 10.4128 )
@@ -1058,29 +1145,6 @@ material/0 = SubResource( 54 )
 [node name="CollisionShape" type="CollisionShape" parent="Structure/Roof"]
 shape = SubResource( 2 )
 
-[node name="Soda_can" type="MeshInstance" parent="Structure"]
-transform = Transform( 0.012, 0, 0, 0, -5.24537e-10, 0.012, 0, -0.012, -5.24537e-10, 3.56913, 6.6929, -12.2689 )
-mesh = ExtResource( 8 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 28 )
-material/1 = SubResource( 29 )
-material/2 = SubResource( 30 )
-material/3 = SubResource( 31 )
-material/4 = SubResource( 32 )
-material/5 = SubResource( 33 )
-material/6 = SubResource( 34 )
-material/7 = SubResource( 35 )
-material/8 = SubResource( 36 )
-material/9 = SubResource( 37 )
-material/10 = SubResource( 38 )
-material/11 = SubResource( 39 )
-material/12 = SubResource( 40 )
-material/13 = SubResource( 41 )
-material/14 = SubResource( 42 )
-material/15 = SubResource( 43 )
-material/16 = SubResource( 44 )
-material/17 = SubResource( 45 )
-
 [node name="Balcony" type="MeshInstance" parent="Structure"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.493, 5, 9.473 )
 mesh = ExtResource( 4 )
@@ -1209,6 +1273,29 @@ material/3 = SubResource( 25 )
 material/4 = SubResource( 26 )
 material/5 = SubResource( 27 )
 
+[node name="Soda_can" type="MeshInstance" parent="Structure"]
+transform = Transform( 0.012, 0, 0, 0, -5.24537e-10, 0.012, 0, -0.012, -5.24537e-10, 3.56913, 6.6929, -12.2689 )
+mesh = ExtResource( 8 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 28 )
+material/1 = SubResource( 29 )
+material/2 = SubResource( 30 )
+material/3 = SubResource( 31 )
+material/4 = SubResource( 32 )
+material/5 = SubResource( 33 )
+material/6 = SubResource( 34 )
+material/7 = SubResource( 35 )
+material/8 = SubResource( 36 )
+material/9 = SubResource( 37 )
+material/10 = SubResource( 38 )
+material/11 = SubResource( 39 )
+material/12 = SubResource( 40 )
+material/13 = SubResource( 41 )
+material/14 = SubResource( 42 )
+material/15 = SubResource( 43 )
+material/16 = SubResource( 44 )
+material/17 = SubResource( 45 )
+
 [node name="wall" type="StaticBody" parent="Structure"]
 transform = Transform( -9.61651e-07, 2, -6.55671e-07, 0, -8.74228e-08, -15, -22, -8.74228e-08, 2.86603e-14, -39.98, 16, 7.21078 )
 __meta__ = {
@@ -1280,9 +1367,6 @@ transform = Transform( 1, -7.10543e-15, 0, 0, 1, 4.64924e-13, 1.69407e-21, -4.06
 mesh = SubResource( 49 )
 material/0 = SubResource( 56 )
 
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 29.1251, -7.00732 )
-
 [connection signal="input_event" from="NPCs/NPC1" to="NPCs" method="_on_NPC1_input_event"]
 [connection signal="input_event" from="NPCs/NPC2" to="NPCs" method="_on_NPC2_input_event"]
 [connection signal="input_event" from="NPCs/NPC3" to="NPCs" method="_on_NPC3_input_event"]
@@ -1293,7 +1377,6 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 29.1
 [connection signal="input_event" from="NPCs/NPC8" to="NPCs" method="_on_NPC8_input_event"]
 [connection signal="input_event" from="NPCs/NPC9" to="NPCs" method="_on_NPC9_input_event"]
 [connection signal="input_event" from="NPCs/NPC10" to="NPCs" method="_on_NPC10_input_event"]
-[connection signal="input_event" from="Lixenzo" to="NPCs" method="_on_StaticBody_input_event"]
 [connection signal="input_event" from="OrderButton" to="Drink" method="_on_OrderButton_input_event"]
 [connection signal="input_event" from="ResetButton" to="Drink" method="_on_ResetButton_input_event"]
 [connection signal="input_event" from="Ingredients/Ingredient1" to="Drink" method="_on_Ingredient1_input_event"]
