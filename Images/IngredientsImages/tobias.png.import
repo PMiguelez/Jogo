@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TOBIAS.png-7689c00166cdb0edbbfd9335e9aa3f54.stex"
+path="res://.import/tobias.png-dd80d59accb5d2d76e818b009e04ce49.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/IngredientsImages/TOBIAS.png"
-dest_files=[ "res://.import/TOBIAS.png-7689c00166cdb0edbbfd9335e9aa3f54.stex" ]
+source_file="res://Images/IngredientsImages/tobias.png"
+dest_files=[ "res://.import/tobias.png-dd80d59accb5d2d76e818b009e04ce49.stex" ]
 
 [params]
 

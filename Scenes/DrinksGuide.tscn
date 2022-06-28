@@ -59,9 +59,9 @@ n, nome do ingrediente x
 n, nome do ingrediente x"
 
 [node name="DrinksName" type="Label" parent="."]
-margin_left = 375.0
+margin_left = 348.0
 margin_top = 210.0
-margin_right = 480.0
+margin_right = 453.0
 margin_bottom = 224.0
 text = "Nome da bebida"
 

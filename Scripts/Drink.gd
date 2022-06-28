@@ -7,7 +7,7 @@ var ingredients = {0:[0.5, 0.5, 0.5],
 				1:[1.0,0.0,0.0], 2:[0.0,1.0,0.0], 3:[0.0,0.0,1.0], 
 				4:[1.0,0.0,1.0], 5:[0.0,1.0,1.0], 6:[1.0,1.0,0.0],
 				7:[1.0,1.0,1.0], 8:[0.2,0.2,0.2], 9:[0.6,0.2,1.0]}
-
+				
 func _ready():
 	update_drink(0)
 
@@ -49,12 +49,14 @@ func _on_OrderButton_input_event(camera, event, position, normal, shape_idx):
 func on_input_event_drinks(event, index):
 	if (event is InputEventMouseButton and event.pressed):
 		get_node("/root/Bar/water_sound").play()
+		get_node("/root/Bar/DrinksGuide").pay()
 		update_drink(index)
 		
 # Ingredient clicked -> adds its color to drink
 func on_input_event_ingredients(event, index):
 	if (event is InputEventMouseButton and event.pressed):
 		get_node("/root/Bar/clicking_sound").play()
+		get_node("/root/Bar/DrinksGuide").pay()
 		update_drink(index)
 		
 
