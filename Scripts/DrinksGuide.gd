@@ -71,6 +71,7 @@ func sendDrink(drink_made):
 		return false
 		
 	if order == drink_made:
+		get_node("/root/Bar/correct_drink").play()
 		money += random_gen.randi_range(4, 12)
 		get_node("/root/Bar/Display/Money").text = "Dinheiro: "+str(money)
 		get_node("/root/Bar/NPCs").giveDrink(client)
@@ -79,6 +80,7 @@ func sendDrink(drink_made):
 			load_ = true
 		return true
 		
+	get_node("/root/Bar/wrong_drink").play()
 	money -= random_gen.randi_range(2, 6)
 	get_node("/root/Bar/Display/Money").text = "Dinheiro: "+str(money)
 	if money <= -15:

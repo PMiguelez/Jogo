@@ -1,6 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/camera_control.gd" type="Script" id=1]
+[ext_resource path="res://Sounds/winning_music.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Scripts/Win.gd" type="Script" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.117647, 0.376471, 0.721569, 1 )
@@ -41,6 +43,11 @@ load_path = "res://.import/vc_ganhou.png-a2a2a5f56b39c3e01ec2b7aa85265f39.stex"
 albedo_texture = SubResource( 6 )
 
 [node name="Win" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="winning_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -18.0
 
 [node name="Player2" type="KinematicBody" parent="."]
 transform = Transform( 0.1, 0, 0, 0, 0.6, 0, 0, 0, 0.1, 0, 1.146, 0 )

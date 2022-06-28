@@ -45,26 +45,34 @@ func _on_OrderButton_input_event(camera, event, position, normal, shape_idx):
 		if get_node("/root/Bar/DrinksGuide").sendDrink(drink):
 			resetDrink()
 
-# Ingredient clicked -> adds its color to drink
-func on_input_event(event, index):
+# Drink clicked -> adds its color to drink
+func on_input_event_drinks(event, index):
 	if (event is InputEventMouseButton and event.pressed):
+		get_node("/root/Bar/water_sound").play()
 		update_drink(index)
+		
+# Ingredient clicked -> adds its color to drink
+func on_input_event_ingredients(event, index):
+	if (event is InputEventMouseButton and event.pressed):
+		get_node("/root/Bar/clicking_sound").play()
+		update_drink(index)
+		
 
 func _on_Ingredient1_input_event(camera, event, position, normal, shape_idx):
-	on_input_event(event, 1)
+	on_input_event_ingredients(event, 1)
 func _on_Ingredient2_input_event(camera, event, position, normal, shape_idx):
-	on_input_event(event, 2)
+	on_input_event_ingredients(event, 2)
 func _on_Ingredient3_input_event(camera, event, position, normal, shape_idx):
-	on_input_event(event, 3)
+	on_input_event_drinks(event, 3)
 func _on_Ingredient4_input_event(camera, event, position, normal, shape_idx):
-	on_input_event(event, 4)
+	on_input_event_ingredients(event, 4)
 func _on_Ingredient5_input_event(camera, event, position, normal, shape_idx):
-	on_input_event(event, 5)
+	on_input_event_drinks(event, 5)
 func _on_Ingredient6_input_event(camera, event, position, normal, shape_idx):
-	on_input_event(event, 6)
+	on_input_event_drinks(event, 6)
 func _on_Ingredient7_input_event(camera, event, position, normal, shape_idx):
-	on_input_event(event, 7)
+	on_input_event_ingredients(event, 7)
 func _on_Ingredient8_input_event(camera, event, position, normal, shape_idx):
-	on_input_event(event, 8)
+	on_input_event_ingredients(event, 8)
 func _on_Ingredient9_input_event(camera, event, position, normal, shape_idx):
-	on_input_event(event, 9)
+	on_input_event_ingredients(event, 9)

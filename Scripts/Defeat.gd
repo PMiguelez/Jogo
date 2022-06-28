@@ -1,12 +1,9 @@
 extends Spatial
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	$defeat_music.play()
+
+func _input(event):
+	if Input.is_key_pressed(KEY_R):
+		get_tree().change_scene("res://Scenes/Main.tscn")
 

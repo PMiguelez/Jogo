@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/camera_control.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Defeat.gd" type="Script" id=2]
+[ext_resource path="res://Sounds/defeat_music.mp3" type="AudioStream" id=3]
 
 [sub_resource type="SpatialMaterial" id=8]
 albedo_color = Color( 0.117647, 0.376471, 0.721569, 1 )
@@ -25,6 +26,10 @@ albedo_texture = SubResource( 9 )
 
 [node name="Defeat" type="Spatial"]
 script = ExtResource( 2 )
+
+[node name="defeat_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

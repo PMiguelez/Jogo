@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bg_jazz.mp3-79e48d2e5d233d0d2fd735b87e4bf3b2.mp3str"
+
+[deps]
+
+source_file="res://Sounds/bg_jazz.mp3"
+dest_files=[ "res://.import/bg_jazz.mp3-79e48d2e5d233d0d2fd735b87e4bf3b2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
