@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/StartMenu.gd" type="Script" id=1]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonts/Choir.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = SubResource( 1 )
+
+[node name="StartMenu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1028.0
+margin_bottom = 604.0
+color = Color( 0.298039, 0.419608, 0.537255, 1 )
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 270.0
+margin_top = 67.0
+margin_right = 751.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 2 )
+text = "Spacial Barman"
+align = 1
+valign = 1
+
+[node name="Start_button" type="Button" parent="."]
+margin_left = 404.5
+margin_top = 250.0
+margin_right = 619.5
+margin_bottom = 315.0
+text = "START"
+
+[node name="Quit_button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 404.5
+margin_top = 350.0
+margin_right = 619.5
+margin_bottom = 415.0
+text = "QUIT"
+
+[connection signal="pressed" from="Start_button" to="." method="_on_Start_button_pressed"]
+[connection signal="pressed" from="Quit_button" to="." method="_on_Quit_button_pressed"]
